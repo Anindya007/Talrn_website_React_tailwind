@@ -25,7 +25,7 @@ const OTPVerification = ({ email, onVerificationComplete, onResendOTP }) => {
         }
 
         try {
-            const response = await fetch(import.meta.env.backend_url + '/api/verify-otp', {
+            const response = await fetch('/api/verify-otp', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -89,7 +89,7 @@ const RegisterForm = () => {
         if (validateForm()) {
             try {
                 // Send OTP to user's email
-                const response = await fetch(import.meta.env.backend_url + '/api/send-otp', {
+                const response = await fetch('/api/send-otp', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

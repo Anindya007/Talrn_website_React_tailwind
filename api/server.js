@@ -13,11 +13,11 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api', authRoutes);
+app.use('/', authRoutes);
 
 // Health check route
-app.get('/', (req, res) => {
-  res.json({ message: 'Server is running' });
+app.get('/hello', (req, res) => {
+  res.json({ message: 'Hello from Express with CORS + JSON' });
 });
 
 export default app;

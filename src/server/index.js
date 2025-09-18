@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 // Routes
-app.use(authRoutes);
+app.use('/api', authRoutes);
 
 // Health check route
 app.get('/', (req, res) => {

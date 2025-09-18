@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/', authRoutes);
+app.use('/api', authRoutes);
 
 // Health check route
 app.get('/hello', (req, res) => {

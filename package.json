@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "node src/server/index.js",
-    "vercel-build": "vite build && node src/server/index.js"
+    "vercel-build": "vite build"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "1.2.2",

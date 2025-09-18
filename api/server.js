@@ -15,9 +15,6 @@ app.use(express.json());
 // Routes
 app.use('/api', authRoutes);
 
-// Health check route
-app.get('/hello', (req, res) => {
-  res.json({ message: 'Hello from Express with CORS + JSON' });
-});
+
 
 export default app;

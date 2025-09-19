@@ -1,12 +1,51 @@
-# React + Vite
+# React + Vite Project  
+_A clone of Talrn.com with registration & email OTP integration_
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)  
+[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://react.dev/)  
+[![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)](https://vercel.com/)  
+[![Resend](https://img.shields.io/badge/Email-Resend-red)](https://resend.com/)  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Project Overview
 
-## Expanding the ESLint configuration
+This project is a **clone of Talrn.com** with a complete **registration process**.  
+It is built with **React + Vite** for the frontend and includes a backend within the same codebase, deployed as a **Vercel serverless function**.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✅ Features:  
+- Minimal setup with **Vite + React + HMR**  
+- **Email OTP integration** using **Resend**  
+- Full **registration flow** up to the success page  
+- **Backend** integrated in the same repository  
+- Backend deployed as **Vercel serverless function**  
+
+---
+
+## 🛠️ Technologies Used
+
+- **React**
+- **React Router DOM**
+- **Vite**
+- **Resend (Email API)**
+- **Vercel Serverless Functions**
+
+---
+
+## 📂 Project Setup
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+
+
+npm install
+
+npm run dev
+
+-The backend is located in the /api directory.
+-Deployed automatically when pushing to Vercel.
+-Handles email OTP requests via Resend API.
+
+Ensure you have a  RESEND_API_KEY in your .env file

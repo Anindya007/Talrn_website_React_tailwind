@@ -74,6 +74,16 @@ import { Globe, Users } from 'lucide-react';
                     Get Verified
                   </a>
                 </li>
+                <li>
+                  <a href="#" className="hover:text-white">
+                    Remote Jobs
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white">
+                    Resources
+                  </a>
+                </li>
               </ul>
             </div>
             <div>

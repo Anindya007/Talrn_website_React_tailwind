@@ -6,6 +6,8 @@ import { RadioGroup, RadioGroupItem } from './ui/radio-group';
 import OTPVerification from './OTPVerification';
 import Header from '../Header';
 import Footer from '../Footer';
+import { Scroll } from 'lucide-react';
+import ScrollToTopCircularProgress from './ScrollToTopCircularProgress';
 
 const RegisterForm = () => {
     const [formData, setFormData] = useState({
@@ -41,6 +43,17 @@ const RegisterForm = () => {
             accountType: type
         }));
     };
+    // this function would split the text based on first occurence of camel case and add space
+    // e.g. jobTitle -> Job title , city -> City
+    const splitCamelCase = (text) => {
+        if (!text) return "";
+
+        // Capitalize first letter
+        let formatted = text.charAt(0).toUpperCase() + text.slice(1);
+
+        // Find the first camelCase boundary and insert a space
+        return formatted.replace(/([a-z])([A-Z])/, (_, a, b) => `${a} ${b.toLowerCase()}`);
+    }
 
     const validateForm = () => {
         const newErrors = { required: {}, invalid: {}, submit: '' };
@@ -53,7 +66,7 @@ const RegisterForm = () => {
 
         requiredFields.forEach(field => {
             if (!String(formData[field] || '').trim()) {
-                newErrors.required[field] = 'This field is required';
+                newErrors.required[field] = 'The ' + splitCamelCase(field) + ' field is required';
             }
         });
 
@@ -77,7 +90,7 @@ const RegisterForm = () => {
                 newErrors.invalid.website = 'Invalid website URL';
             }
         }
-
+        
         setErrors(newErrors);
         return Object.keys(newErrors.required).length === 0 && Object.keys(newErrors.invalid).length === 0;
     };
@@ -169,6 +182,7 @@ const RegisterForm = () => {
 
     return (
         <>
+            <ScrollToTopCircularProgress/> 
             <Header />
             <div className="max-w-4xl mx-auto px-4 mb-4">
                 <div className="text-center mb-8">
@@ -208,11 +222,11 @@ const RegisterForm = () => {
                                     value={formData.firstName}
                                     onChange={handleInputChange}
                                     placeholder="First Name *"
-                                    
+
                                     className={(errors.required.firstName || errors.invalid.firstName) ? 'border-red-500' : ''}
                                 />
                                 {errors.required.firstName && (
-                                    <p className="text-red-500 text-sm">This field is required</p>
+                                    <p className="text-red-500 text-sm">{errors.required.firstName}</p>
                                 )}
                                 {errors.invalid.firstName && (
                                     <p className="text-red-500 text-sm">{errors.invalid.firstName}</p>
@@ -224,11 +238,11 @@ const RegisterForm = () => {
                                     value={formData.lastName}
                                     onChange={handleInputChange}
                                     placeholder="Last Name *"
-                                
+
                                     className={(errors.required.lastName || errors.invalid.lastName) ? 'border-red-500' : ''}
                                 />
                                 {errors.required.lastName && (
-                                    <p className="text-red-500 text-sm">This field is required</p>
+                                    <p className="text-red-500 text-sm">{errors.required.lastName}</p>
                                 )}
                                 {errors.invalid.lastName && (
                                     <p className="text-red-500 text-sm">{errors.invalid.lastName}</p>
@@ -244,11 +258,11 @@ const RegisterForm = () => {
                                         value={formData.jobTitle}
                                         onChange={handleInputChange}
                                         placeholder="Job title *"
-                                        
+
                                         className={(errors.required.jobTitle || errors.invalid.jobTitle) ? 'border-red-500' : ''}
                                     />
                                     {errors.required.jobTitle && (
-                                        <p className="text-red-500 text-sm">This field is required</p>
+                                        <p className="text-red-500 text-sm">{errors.required.jobTitle}</p>
                                     )}
                                     {errors.invalid.jobTitle && (
                                         <p className="text-red-500 text-sm">{errors.invalid.jobTitle}</p>
@@ -260,11 +274,11 @@ const RegisterForm = () => {
                                         value={formData.organization}
                                         onChange={handleInputChange}
                                         placeholder="Organization *"
-                                    
+
                                         className={(errors.required.organization || errors.invalid.organization) ? 'border-red-500' : ''}
                                     />
                                     {errors.required.organization && (
-                                        <p className="text-red-500 text-sm">This field is required</p>
+                                        <p className="text-red-500 text-sm">{errors.required.organization}</p>
                                     )}
                                     {errors.invalid.organization && (
                                         <p className="text-red-500 text-sm">{errors.invalid.organization}</p>
@@ -281,18 +295,18 @@ const RegisterForm = () => {
                                         value={formData.website}
                                         onChange={handleInputChange}
                                         placeholder="Website *"
-                                        
+
                                         className={(errors.required.website || errors.invalid.website) ? 'border-red-500' : ''}
                                     />
-                                
+
                                     {errors.required.website && (
-                                        <p className="text-red-500 text-sm">This field is required</p>
+                                        <p className="text-red-500 text-sm">{errors.required.website}</p>
                                     )}
                                     {errors.invalid.website && (
                                         <p className="text-red-500 text-sm">{errors.invalid.website}</p>
                                     )}
-                                    </div>
-                                )}
+                                </div>
+                            )}
                             <div className="space-y-1">
                                 <div className="relative">
                                     <Input
@@ -301,14 +315,14 @@ const RegisterForm = () => {
                                         value={formData.workEmail}
                                         onChange={handleInputChange}
                                         placeholder="Work email *"
-                                        
+
                                         className={(errors.required.workEmail || errors.invalid.workEmail) ? 'border-red-500' : ''}
                                     />
                                     <span className="absolute right-3 top-1/5 transform -translate-y-1 text-gray-500">
                                         @website.com
                                     </span>
                                     {errors.required.workEmail && (
-                                        <p className="text-red-500 text-sm">This field is required</p>
+                                        <p className="text-red-500 text-sm">{errors.required.workEmail}</p>
                                     )}
                                     {errors.invalid.workEmail && (
                                         <p className="text-red-500 text-sm">{errors.invalid.workEmail}</p>
@@ -328,7 +342,7 @@ const RegisterForm = () => {
                                     className={(errors.required.phoneNumber || errors.invalid.phoneNumber) ? 'border-red-500' : ''}
                                 />
                                 {errors.required.phoneNumber && (
-                                    <p className="text-red-500 text-sm">This field is required</p>
+                                    <p className="text-red-500 text-sm">Please enter valid number</p>
                                 )}
                                 {errors.invalid.phoneNumber && (
                                     <p className="text-red-500 text-sm">{errors.invalid.phoneNumber}</p>
@@ -343,7 +357,7 @@ const RegisterForm = () => {
                                     className={(errors.required.city || errors.invalid.city) ? 'border-red-500' : ''}
                                 />
                                 {errors.required.city && (
-                                    <p className="text-red-500 text-sm">This field is required</p>
+                                    <p className="text-red-500 text-sm">{errors.required.city}</p>
                                 )}
                                 {errors.invalid.city && (
                                     <p className="text-red-500 text-sm">{errors.invalid.city}</p>
@@ -361,7 +375,7 @@ const RegisterForm = () => {
                                     className={(errors.required.corporateRegistrationNumber || errors.invalid.corporateRegistrationNumber) ? 'border-red-500' : ''}
                                 />
                                 {errors.required.corporateRegistrationNumber && (
-                                    <p className="text-red-500 text-sm">This field is required</p>
+                                    <p className="text-red-500 text-sm">The CIN/GST field is required.</p>
                                 )}
                                 {errors.invalid.corporateRegistrationNumber && (
                                     <p className="text-red-500 text-sm">{errors.invalid.corporateRegistrationNumber}</p>

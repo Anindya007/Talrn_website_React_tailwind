@@ -8,24 +8,162 @@ import Header from "../Header"
 import Footer from "../Footer"
 import ScrollToTopCircularProgress from "./ScrollToTopCircularProgress"
 import ProfileCards from "./ProfileCards"
+import MarqueeCards from "./MarqueeCards"
 
 export default function HomePage() {
 
-  
+  const cards1 = [
+    {
+      title: "Buyhive",
+      description: "12 month engagement",
+      logo: "https://talrn.com/assets/img/logos/15.png",
+    },
+    {
+      title: "Mogul",
+      description: "12 month engagement",
+      logo: "https://talrn.com/assets/img/logos/6.png",
+      active: true,
+    },
+    {
+      title: "Bracketology",
+      description: "12 month engagement",
+      logo: "https://talrn.com/assets/img/logos/1.png",
+    },
+    {
+      title: "RXR",
+      description: "12 month engagement",
+      logo: "https://talrn.com/assets/img/logos/22.png",
+    },
+    {
+      title: "Remoteshare",
+      description: "12 month engagement",
+      logo: "https://talrn.com/assets/img/logos/18.png",
+    },
+    {
+      title: "1871",
+      description: "12 month engagement",
+      logo: "https://talrn.com/assets/img/logos/28.png",
+      active: true,
+    },
+    {
+      title: "UCFS",
+      description: "12 month engagement",
+      logo: "https://talrn.com/assets/img/logos/27.png",
+    },
+    {
+      title: "Keller Offers",
+      description: "12 month engagement",
+      logo: "https://talrn.com/assets/img/logos/25.png",
+    },
+    {
+      title: "Simple night",
+      description: "12 month engagement",
+      logo: "https://talrn.com/assets/img/logos/8.png",
+    },
+    {
+      title: "EVA",
+      description: "12 month engagement",
+      logo: "https://talrn.com/assets/img/logos/2.png",
+    },
+    {
+      title: "Kopfspringer",
+      description: "12 month engagement",
+      logo: "https://talrn.com/assets/img/logos/16.png",
+    },
+    {
+      title: "Kiwiwrite",
+      description: "12 month engagement",
+      logo: "https://talrn.com/assets/img/logos/14.png",
+      active: true,
+    },
+    {
+      title: "Maro",
+      description: "12 month engagement",
+      logo: "https://talrn.com/assets/img/logos/7.png",
+    },
+  ]
 
-  
-    
+
+  const cards2 =  [
+  {
+    title: "Farechild",
+    description: "12 month engagement",
+    logo: "https://talrn.com/assets/img/logos/13.png",
+  },
+  {
+    title: "Aurum",
+    description: "12 month engagement",
+    logo: "https://talrn.com/assets/img/logos/21.png",
+  },
+  {
+    title: "Big Shoulders Fund",
+    description: "12 month engagement",
+    logo: "https://talrn.com/assets/img/logos/12.png",
+  },
+  {
+    title: "Biograph",
+    description: "12 month engagement",
+    logo: "https://talrn.com/assets/img/logos/23.png",
+  },
+  {
+    title: "YOVI",
+    description: "12 month engagement",
+    logo: "https://talrn.com/assets/img/logos/26.png",
+  },
+  {
+    title: "Skoller",
+    description: "12 month engagement",
+    logo: "https://talrn.com/assets/img/logos/11.png",
+  },
+  {
+    title: "Shiny Registry",
+    description: "12 month engagement",
+    logo: "https://talrn.com/assets/img/logos/10.png",
+  },
+  {
+    title: "SOCPOC",
+    description: "12 month engagement",
+    logo: "https://talrn.com/assets/img/logos/4.png",
+  },
+  {
+    title: "Hedge",
+    description: "12 month engagement",
+    logo: "https://talrn.com/assets/img/logos/3.png",
+  },
+  {
+    title: "Loan Shout",
+    description: "12 month engagement",
+    logo: "https://talrn.com/assets/img/logos/17.png",
+  },
+  {
+    title: "Assuricare",
+    description: "12 month engagement",
+    logo: "https://talrn.com/assets/img/logos/20.png",
+  },
+  {
+    title: "Arkstone",
+    description: "12 month engagement",
+    logo: "https://talrn.com/assets/img/logos/9.png",
+  },
+  {
+    title: "Videobomb",
+    description: "12 month engagement",
+    logo: "https://talrn.com/assets/img/logos/5.png",
+  },
+]
+
+
 
 
   return (
     <div className="min-h-screen bg-white">
-       <ScrollToTopCircularProgress />
-  
-        
+      <ScrollToTopCircularProgress />
+
+
 
       <Header />
 
-      
+
       {/* Hero Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -98,8 +236,8 @@ export default function HomePage() {
                 <div className="relative animate-[moves-upwards_2s_ease_1s]">{profiles.map((profile) => (
         <ProfileCard key={profile.name} {...profile} />
       ))}</div></div> */}
-                <ProfileCards/>
-              
+              <ProfileCards />
+
             </div>
           </div>
         </div>
@@ -120,16 +258,16 @@ export default function HomePage() {
 
       {/* Augment Team Section */}
       <section className="max-w-7xl mx-auto rounded-md py-8 px-4 sm:px-6 lg:px-8 section-dark text-white bg-slate-900">
-        
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-3xl font-bold mb-6">Augment your team with highly-skilled iOS Developers</h3>
-            </div>
-            <div>
-              <Button className="bg-white text-gray-900 border-2 h-12 hover:bg-transparent hover:border-white hover:text-white cursor-pointer w-full">View Profiles</Button>
-            </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 className="text-3xl font-bold mb-6">Augment your team with highly-skilled iOS Developers</h3>
           </div>
-        
+          <div>
+            <Button className="bg-white text-gray-900 border-2 h-12 hover:bg-transparent hover:border-white hover:text-white cursor-pointer w-full">View Profiles</Button>
+          </div>
+        </div>
+
       </section>
 
       {/* Scale Team Section */}
@@ -146,22 +284,22 @@ export default function HomePage() {
               <div className="mb-6">
                 <h4 className="font-semibold text-gray-900 mb-4">What is your industry?</h4>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary" className="text-blue-600">
+                  <Badge variant="outline" className="p-4 shadow text-[#5271ff] cursor-pointer hover:bg-[#5271ff] hover:text-white">
                     Healthcare
                   </Badge>
-                  <Badge variant="secondary" className="text-blue-600">
+                  <Badge variant="outline" className="p-4 shadow text-[#5271ff] cursor-pointer hover:bg-[#5271ff] hover:text-white">
                     Automotive
                   </Badge>
-                  <Badge variant="secondary" className="text-blue-600">
+                  <Badge variant="outline" className="p-4 shadow text-[#5271ff] cursor-pointer hover:bg-[#5271ff] hover:text-white">
                     Banking
                   </Badge>
-                  <Badge variant="secondary" className="text-blue-600">
+                  <Badge variant="outline" className="p-4 shadow text-[#5271ff] cursor-pointer hover:bg-[#5271ff] hover:text-white">
                     Capital Markets
                   </Badge>
-                  <Badge variant="secondary" className="text-blue-600">
+                  <Badge variant="outline" className="p-4 shadow text-[#5271ff] cursor-pointer hover:bg-[#5271ff] hover:text-white">
                     Travel
                   </Badge>
-                  <Badge variant="secondary" className="text-blue-600">
+                  <Badge variant="outline" className="p-4 shadow text-[#5271ff] cursor-pointer hover:bg-[#5271ff] hover:text-white">
                     Digital Commerce
                   </Badge>
                 </div>
@@ -180,38 +318,38 @@ export default function HomePage() {
 
       {/* Network Section */}
       <section className="max-w-7xl mx-auto rounded-md py-16 px-4 sm:px-6 lg:px-8 bg-black text-white bg-[url('https://talrn.com/assets/img/darkiphone.webp')]">
-        
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-3xl font-bold mb-6">Talrn is the world's largest network of top iOS talent.</h3>
-              <p className="text-gray-300 mb-8">
-                Save 70% on staff costs, while driving innovation & growth. Guaranteed.
-              </p>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 className="text-3xl font-bold mb-6">Talrn is the world's largest network of top iOS talent.</h3>
+            <p className="text-gray-300 mb-8">
+              Save 70% on staff costs, while driving innovation & growth. Guaranteed.
+            </p>
+          </div>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6 mt-12">
+          <Card className="relative bg-[#5271ff] text-white p-6 feature-card hover:bg-[#f0ffff] hover:text-[#5271ff] cursor-pointer">
+            <h4 className="font-semibold mb-2">Featured works on Talrn</h4>
+            <p >Explore the best works delivered by developers.</p>
+            <div className="absolute bottom-2 right-2">
+              <CircleArrowRight />
             </div>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
-            <Card className="relative bg-[#5271ff] text-white p-6 feature-card hover:bg-[#f0ffff] hover:text-[#5271ff] cursor-pointer">
-              <h4 className="font-semibold mb-2">Featured works on Talrn</h4>
-              <p >Explore the best works delivered by developers.</p>
-              <div className="absolute bottom-2 right-2">
-                <CircleArrowRight />
-              </div>
-            </Card>
-            <Card className="relative bg-[#5271ff] text-white p-6 feature-card hover:bg-[#f0ffff] hover:text-[#5271ff] cursor-pointer" >
-              <h4 className="font-semibold mb-2">See all profiles on Talrn</h4>
-              <p >Discover top developer profiles available on Talrn.</p>
-              <div className="absolute bottom-2 right-2">
-                <CircleArrowRight />
-              </div>
-            </Card>
-            <Card className="relative bg-[#5271ff] text-white p-6 feature-card  hover:bg-[#f0ffff] hover:text-[#5271ff] cursor-pointer">
-              <h4 className="font-semibold mb-2">Apply as a developer</h4>
-              <p >Start your journey as a developer with Talrn.</p>
-              <div className="absolute bottom-2 right-2">
-                <CircleArrowRight />
-              </div>
-            </Card>
-          </div>
+          </Card>
+          <Card className="relative bg-[#5271ff] text-white p-6 feature-card hover:bg-[#f0ffff] hover:text-[#5271ff] cursor-pointer" >
+            <h4 className="font-semibold mb-2">See all profiles on Talrn</h4>
+            <p >Discover top developer profiles available on Talrn.</p>
+            <div className="absolute bottom-2 right-2">
+              <CircleArrowRight />
+            </div>
+          </Card>
+          <Card className="relative bg-[#5271ff] text-white p-6 feature-card  hover:bg-[#f0ffff] hover:text-[#5271ff] cursor-pointer">
+            <h4 className="font-semibold mb-2">Apply as a developer</h4>
+            <p >Start your journey as a developer with Talrn.</p>
+            <div className="absolute bottom-2 right-2">
+              <CircleArrowRight />
+            </div>
+          </Card>
+        </div>
       </section>
 
       {/* Client Success Section */}
@@ -223,69 +361,66 @@ export default function HomePage() {
           <p className="text-gray-600 mb-12">And just to name a few.</p>
 
           {/* Client Logos Grid */}
-            <Marquee pauseOnHover={false} gradient={false} speed={50}>
-              <div className="flex space-x-12 items-center justify-center">
-                {['Client 1', 'Client 2', 'Client 3', 'Client 4', 'Client 5', 'Client 6','Client 7',].map((client, index) => (
+          <Marquee pauseOnHover={false} gradient={false} speed={50}>
+            {/*<div className="flex space-x-12 items-center justify-center">
+                 {['Client 1', 'Client 2', 'Client 3', 'Client 4', 'Client 5', 'Client 6','Client 7',].map((client, index) => (
                   <div key={index} className="text-center client-logo">
                     <div className="w-48 h-32 bg-gray-200 rounded mx-auto mb-2 flex items-center justify-center">
                       <span className="text-sm font-bold">{client}</span>
                     </div>
                   </div>
-                ))}
-              </div>
-            </Marquee>
+                ))} 
+              </div>*/}
+            <div className="flex space-x-12 items-center justify-center overflow-hidden">
+              <MarqueeCards cards={cards1} />
+            </div>
+          </Marquee>
+          <br /><br />
+          <Marquee pauseOnHover={false} gradient={false} speed={50} direction="right">
+            <div className="flex space-x-12 items-center justify-center overflow-hidden">
+              <MarqueeCards cards={cards2} />
+            </div>
+          </Marquee>
+        </div>
 
-            <Marquee pauseOnHover={false} gradient={false} speed={50} direction="right">
-              <div className="flex space-x-12 items-center justify-center">
-                {['Client 1', 'Client 2', 'Client 3', 'Client 4', 'Client 5', 'Client 6','Client 7',].map((client, index) => (
-                  <div key={index} className="text-center client-logo">
-                    <div className="w-48 h-32 bg-gray-200 rounded mx-auto mb-2 flex items-center justify-center">
-                      <span className="text-sm font-bold">{client}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Marquee>
-        </div> 
-      
       </section>
 
       {/* Managed Services Section */}
       <section className="max-w-7xl mx-auto rounded-md py-16 px-4 sm:px-6 lg:px-8 bg-gray-800 text-white bg-[url(https://talrn.com/assets/img/outsourcing.webp)]">
-        
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-            <div>
-              <h3 className="text-3xl font-bold mb-6">Experience Talrn's managed services.</h3>
-              <p className="text-gray-300">
-                Full-scale resource augmentation with a dedicated success manager to manage your team's performance.
-                Book a free call with our team.
-              </p>
-            </div>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="bg-[#5271ff] text-white p-6 pricing-card">
-              <h4 className="font-semibold mb-2">Premium Plan</h4>
-              <p className="text-2xl font-bold mb-4">$160 /mo</p>
-              <Button variant="outline" className="rounded-full w-1/3 text-blue-600 bg-white hover:bg-gray-100">
-                Know More
-              </Button>
-            </Card>
-            <Card className="bg-[#5271ff] text-white p-6 pricing-card">
-              <h4 className="font-semibold mb-2">Standard Plan</h4>
-              <p className="text-2xl font-bold mb-4">$0 /mo</p>
-              <Button variant="outline" className="rounded-full w-1/3 text-blue-700 bg-white hover:bg-gray-100">
-                Know More
-              </Button>
-            </Card>
-            <Card className="bg-[#5271ff] text-white p-6 pricing-card">
-              <h4 className="font-semibold mb-2">Customized Plan</h4>
-              <p className="text-lg mb-4">Get in touch with our team</p>
-              <Button variant="outline" className="rounded-full w-1/3 text-blue-800 bg-white hover:bg-gray-100">
-                Contact Us
-              </Button>
-            </Card>
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+          <div>
+            <h3 className="text-3xl font-bold mb-6">Experience Talrn's managed services.</h3>
+            <p className="text-gray-300">
+              Full-scale resource augmentation with a dedicated success manager to manage your team's performance.
+              Book a free call with our team.
+            </p>
           </div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          <Card className="bg-[#5271ff] text-white p-6 pricing-card">
+            <h4 className="font-semibold mb-2">Premium Plan</h4>
+            <p className="text-2xl font-bold mb-4">$160 /mo</p>
+            <Button variant="outline" className="rounded-full w-1/3 text-blue-600 bg-white hover:bg-transparent hover:text-white cursor-pointer">
+              Know More
+            </Button>
+          </Card>
+          <Card className="bg-[#5271ff] text-white p-6 pricing-card">
+            <h4 className="font-semibold mb-2">Standard Plan</h4>
+            <p className="text-2xl font-bold mb-4">$0 /mo</p>
+            <Button variant="outline" className="rounded-full w-1/3 text-blue-700 bg-white hover:bg-transparent hover:text-white cursor-pointer">
+              Know More
+            </Button>
+          </Card>
+          <Card className="bg-[#5271ff] text-white p-6 pricing-card">
+            <h4 className="font-semibold mb-2">Customized Plan</h4>
+            <p className="text-lg mb-4">Get in touch with our team</p>
+            <Button variant="outline" className="rounded-full w-1/3 text-blue-800 bg-white hover:bg-transparent hover:text-white cursor-pointer">
+              Contact Us
+            </Button>
+          </Card>
+        </div>
       </section>
 
       {/* News Section */}
@@ -306,7 +441,7 @@ export default function HomePage() {
                 <span className="text-sm font-bold">FOX NEWS</span>
               </div>*/}
               <img src="https://talrn.com/assets/img/brands/z2.webp" alt="Fox News Logo" className="w-24 h-16 object-contain mx-auto mb-2" />
-            </div> 
+            </div>
             <div className="text-center news-logo">
               {/* <div className="w-24 h-16 bg-gray-200 rounded mx-auto mb-2 flex items-center justify-center">
                 <span className="text-sm font-bold">CBS</span>
@@ -325,33 +460,33 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <section className="max-w-7xl mx-auto py-16 px-4 mb-6 rounded-md sm:px-6 lg:px-8 cta-section bg-[#5271ff]  text-white">
-        
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-3xl font-bold mb-6">Start your outsourcing journey today</h3>
-              <div className="flex items-center space-x-6 text-sm">
-                <div className="flex items-center">
-                  <CircleCheck className="w-4 h-4 mr-2"/>
-                  <span>Independent</span>
-                </div>
-                <div className="flex items-center">
-                  <CircleCheck className="w-4 h-4 mr-2" />
-                  <span>Secure</span>
-                </div>
-                <div className="flex items-center">
-                  <CircleCheck className="w-4 h-4 mr-2" />
-                  <span>Transparent</span>
-                </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 className="text-3xl font-bold mb-6">Start your outsourcing journey today</h3>
+            <div className="flex items-center space-x-6 text-sm">
+              <div className="flex items-center">
+                <CircleCheck className="w-4 h-4 mr-2" />
+                <span>Independent</span>
+              </div>
+              <div className="flex items-center">
+                <CircleCheck className="w-4 h-4 mr-2" />
+                <span>Secure</span>
+              </div>
+              <div className="flex items-center">
+                <CircleCheck className="w-4 h-4 mr-2" />
+                <span>Transparent</span>
               </div>
             </div>
-            <div>
-              <Button className="bg-white text-gray-900 border-2 h-12 hover:bg-transparent hover:border-white hover:text-white cursor-pointer w-full" >View Profiles</Button>
-            </div>
           </div>
+          <div>
+            <Button className="bg-white text-gray-900 border-2 h-12 hover:bg-transparent hover:border-white hover:text-white cursor-pointer w-full" >View Profiles</Button>
+          </div>
+        </div>
       </section>
 
       {/* Footer */}
-      <Footer/>
+      <Footer />
     </div>
   )
 }

@@ -7,14 +7,14 @@ import { Badge } from './components/ui/badge';
   return (
     <>
       {/* Notification Bar */}
-      <div className="notification-bar bg-[#5271ff] text-white py-2 px-4 text-center text-sm">
+      <div className="bg-[#5271ff] text-white py-2 px-4 text-center text-sm">
         <span className="inline-flex items-center">
           <Badge variant="secondary" className="mr-2 bg-white text-blue-600">
             New
           </Badge>
-          Get a Guaranteed Developer within 24 working hours. Hire candidates.
-          <button className="float-right text-white hover:text-gray-200">×</button>
+          Get a Guaranteed Developer within 24 working hours. <span className='hover:underline cursor-pointer'>Hire candidates</span>.          
         </span>
+        <button className="ml-64 float-right text-white hover:text-gray-200">×</button>
       </div>
       <header className="border-b border-gray-200 sticky top-0 z-50 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
